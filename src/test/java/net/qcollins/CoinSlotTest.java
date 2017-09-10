@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import net.qcollins.coinsystem.CoinSlot;
+
 public class CoinSlotTest {
 	private CoinSlot coinSlot;
 	

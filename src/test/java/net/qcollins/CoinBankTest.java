@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import net.qcollins.coinsystem.CoinBank;
 import net.qcollins.currency.Dime;
 import net.qcollins.currency.Nickel;
 import net.qcollins.currency.Quarter;

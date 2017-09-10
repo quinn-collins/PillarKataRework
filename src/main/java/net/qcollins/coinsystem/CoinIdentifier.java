@@ -1,4 +1,4 @@
-package net.qcollins;
+package net.qcollins.coinsystem;
 
 import net.qcollins.currency.Currency;
 import net.qcollins.currency.Dime;

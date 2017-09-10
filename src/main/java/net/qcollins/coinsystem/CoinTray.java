@@ -1,4 +1,4 @@
-package net.qcollins;
+package net.qcollins.coinsystem;
 
 import java.util.ArrayList;
 import java.util.List;

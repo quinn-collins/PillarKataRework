@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import net.qcollins.coinsystem.CoinIdentifier;
+
 public class CoinIdentifierTest {
 private CoinIdentifier coinIdentifier;
 	

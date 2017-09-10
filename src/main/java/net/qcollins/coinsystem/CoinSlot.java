@@ -1,5 +1,6 @@
-package net.qcollins;
+package net.qcollins.coinsystem;
 
+import net.qcollins.DollarAmount;
 import net.qcollins.currency.Currency;
 
 public class CoinSlot {
@@ -23,6 +24,6 @@ public class CoinSlot {
 	public void insertCoin(double mass, double diameter, double thickness) {
 		Currency coin = coinIdentifier.identify(mass, diameter, thickness);
 		coinBank.addCoin(coin);
-		currentBalance = currentBalance.plus(coin.getValue());	
+		currentBalance = currentBalance.plus(coin.getValue());
 	}
 }
