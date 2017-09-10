@@ -12,7 +12,7 @@ public class DollarAmount {
     }
     
     public int getCents() {
-        return (int)(totalAmountInCents % 100);
+        return (int)(totalAmountInCents);
     }
     
     public int getDollars() {
@@ -41,6 +41,10 @@ public class DollarAmount {
     
     public DollarAmount minus(DollarAmount amountToSubtract) {
         return new DollarAmount(this.totalAmountInCents - amountToSubtract.totalAmountInCents);
+    }
+    
+    public DollarAmount plus(DollarAmount amountToAdd) {
+        return new DollarAmount(this.totalAmountInCents + amountToAdd.totalAmountInCents);
     }
     
 }

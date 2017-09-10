@@ -14,7 +14,7 @@ public class DollarAmountTest {
 	@Before
 	public void setup() {
 		dollarAmountFiftyCents = new DollarAmount(50);
-		dollarAmountOneDollar = new DollarAmount(100);
+		dollarAmountOneDollar = new DollarAmount(1, 0);
 		dollarAmountNegative = new DollarAmount(-25);
 		dollarAmountTemp = new DollarAmount(0);
 	}
@@ -94,6 +94,12 @@ public class DollarAmountTest {
 	public void canSubtractFiftyCentsFromOneDollarWithMinusMethodCall() {
 		dollarAmountTemp = dollarAmountOneDollar.minus(dollarAmountFiftyCents);
 		Assert.assertEquals(50, dollarAmountTemp.getCents());
+	}
+	
+	@Test
+	public void canAddFiftyCentsToOneDollarWithPlusMethodCall() {
+		dollarAmountTemp = dollarAmountOneDollar.plus(dollarAmountFiftyCents);
+		Assert.assertEquals(150, dollarAmountTemp.getCents());
 	}
 	
 }
