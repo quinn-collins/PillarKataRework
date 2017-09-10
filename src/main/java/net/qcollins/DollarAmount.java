@@ -30,4 +30,8 @@ public class DollarAmount {
     public boolean isLessThan(DollarAmount amountToCompare) {
         return this.totalAmountInCents < amountToCompare.totalAmountInCents;
     }
+    
+    public boolean isLessThanOrEqualTo(DollarAmount amountToCompare) {
+        return this.totalAmountInCents <= amountToCompare.totalAmountInCents;
+    }
 }
