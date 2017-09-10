@@ -50,5 +50,15 @@ public class DollarAmountTest {
 		Assert.assertFalse(dollarAmountFiftyCents.isGreaterThan(dollarAmountOneDollar));
 	}
 	
+	@Test
+	public void oneDollarIsNotLessThanFiftyCents() {
+		Assert.assertFalse(dollarAmountOneDollar.isLessThan(dollarAmountFiftyCents));
+	}
+	
+	@Test
+	public void fiftyCentsIsLessThanOneDollar() {
+		Assert.assertTrue(dollarAmountFiftyCents.isLessThan(dollarAmountOneDollar));
+	}
+	
 	
 }
