@@ -39,4 +39,8 @@ public class DollarAmount {
         return totalAmountInCents < 0;
     }
     
+    public DollarAmount minus(DollarAmount amountToSubtract) {
+        return new DollarAmount(this.totalAmountInCents - amountToSubtract.totalAmountInCents);
+    }
+    
 }

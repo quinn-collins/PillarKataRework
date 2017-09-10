@@ -9,12 +9,14 @@ public class DollarAmountTest {
 	private DollarAmount dollarAmountFiftyCents;
 	private DollarAmount dollarAmountOneDollar;
 	private DollarAmount dollarAmountNegative;
+	private DollarAmount dollarAmountTemp;
 	
 	@Before
 	public void setup() {
 		dollarAmountFiftyCents = new DollarAmount(50);
 		dollarAmountOneDollar = new DollarAmount(100);
 		dollarAmountNegative = new DollarAmount(-25);
+		dollarAmountTemp = new DollarAmount(0);
 	}
 	
 	@Test
@@ -86,6 +88,12 @@ public class DollarAmountTest {
 	@Test
 	public void positiveDollarAmountReturnsFalseOnIsNegativeMethodCall() {
 		Assert.assertFalse(dollarAmountFiftyCents.isNegative());
+	}
+	
+	@Test
+	public void canSubtractFiftyCentsFromOneDollarWithMinusMethodCall() {
+		dollarAmountTemp = dollarAmountOneDollar.minus(dollarAmountFiftyCents);
+		Assert.assertEquals(50, dollarAmountTemp.getCents());
 	}
 	
 }
