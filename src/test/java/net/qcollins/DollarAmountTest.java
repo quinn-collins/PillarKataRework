@@ -8,11 +8,13 @@ public class DollarAmountTest {
 	
 	private DollarAmount dollarAmountFiftyCents;
 	private DollarAmount dollarAmountOneDollar;
+	private DollarAmount dollarAmountNegative;
 	
 	@Before
 	public void setup() {
 		dollarAmountFiftyCents = new DollarAmount(50);
 		dollarAmountOneDollar = new DollarAmount(100);
+		dollarAmountNegative = new DollarAmount(-25);
 	}
 	
 	@Test
@@ -74,6 +76,16 @@ public class DollarAmountTest {
 	@Test
 	public void oneDollarIsNotLessThanOrEqualToFiftyCents() {
 		Assert.assertFalse(dollarAmountOneDollar.isLessThanOrEqualTo(dollarAmountFiftyCents));
+	}
+	
+	@Test
+	public void negativeTwentyFiveCentsReturnsTrueOnIsNegativeMethodCall() {
+		Assert.assertTrue(dollarAmountNegative.isNegative());
+	}
+	
+	@Test
+	public void positiveDollarAmountReturnsFalseOnIsNegativeMethodCall() {
+		Assert.assertFalse(dollarAmountFiftyCents.isNegative());
 	}
 	
 }
