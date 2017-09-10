@@ -100,7 +100,7 @@ public class DollarAmountTest {
 	@Test
 	public void canAddFiftyCentsToOneDollarWithPlusMethodCall() {
 		dollarAmountTemp = dollarAmountOneDollar.plus(dollarAmountFiftyCents);
-		Assert.assertEquals(150, dollarAmountTemp.getCents());
+		Assert.assertEquals(50, dollarAmountTemp.getCents());
 	}
 	
 	@Test
@@ -134,5 +134,17 @@ public class DollarAmountTest {
 		DollarAmount dollarAmountNull = null;
 		Assert.assertFalse(dollarAmountFiftyCents.equals(dollarAmountNull));
 	}
+	
+	@Test
+	public void runningHashCodeMethodOnDollarAmountInstanceReturnsTotalCents() {
+		Assert.assertEquals(100, dollarAmountOneDollar.hashCode());
+	}
+	
+	@Test
+	public void toStringMethodWillReturnStringWithTheProperFormatForUSCurrency() {
+		Assert.assertEquals("$0.50", dollarAmountFiftyCents.toString());
+		Assert.assertEquals("$1.00", dollarAmountOneDollar.toString());
+	}
+	
 	
 }
