@@ -14,4 +14,12 @@ public class DollarAmount {
     public int getCents() {
         return (int)(totalAmountInCents % 100);
     }
+    
+    public int getDollars() {
+        return totalAmountInCents / 100;
+    }
+    
+    public boolean isGreaterThan(DollarAmount amountToCompare) {
+        return this.totalAmountInCents > amountToCompare.totalAmountInCents;
+    }
 }
