@@ -47,4 +47,14 @@ public class DollarAmount {
         return new DollarAmount(this.totalAmountInCents + amountToAdd.totalAmountInCents);
     }
     
+    public int compareTo(DollarAmount amountToCompare) {
+        if(this.isGreaterThan(amountToCompare)) {
+            return 1;
+        } else if(this.isLessThan(amountToCompare)) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+    
 }

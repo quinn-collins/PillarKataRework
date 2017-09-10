@@ -102,4 +102,19 @@ public class DollarAmountTest {
 		Assert.assertEquals(150, dollarAmountTemp.getCents());
 	}
 	
+	@Test
+	public void whenICompareFiftyCentsToOneDollarCompareToReturnsNegativeOne() {
+		Assert.assertEquals(-1, dollarAmountFiftyCents.compareTo(dollarAmountOneDollar));
+	}
+	
+	@Test
+	public void whenICompareOneDollarToFiftyCentsCompareToReturnsOne() {
+		Assert.assertEquals(1, dollarAmountOneDollar.compareTo(dollarAmountFiftyCents));
+	}
+	
+	@Test
+	public void whenICompareZeroCentsToZeroCentsCompareToReturnsZero() {
+		Assert.assertEquals(0, dollarAmountTemp.compareTo(DollarAmount.ZERO_DOLLARS));
+	}
+	
 }
