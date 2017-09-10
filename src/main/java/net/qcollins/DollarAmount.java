@@ -57,4 +57,13 @@ public class DollarAmount {
         }
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && obj instanceof DollarAmount) { 
+            return this.totalAmountInCents == ((DollarAmount)obj).totalAmountInCents; 
+        } else {
+            return false;
+        }
+    }
+    
 }

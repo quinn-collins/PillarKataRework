@@ -11,6 +11,7 @@ public class DollarAmountTest {
 	private DollarAmount dollarAmountNegative;
 	private DollarAmount dollarAmountTemp;
 	
+	
 	@Before
 	public void setup() {
 		dollarAmountFiftyCents = new DollarAmount(50);
@@ -115,6 +116,23 @@ public class DollarAmountTest {
 	@Test
 	public void whenICompareZeroCentsToZeroCentsCompareToReturnsZero() {
 		Assert.assertEquals(0, dollarAmountTemp.compareTo(DollarAmount.ZERO_DOLLARS));
+	}
+	
+	@Test
+	public void dollarAmountFiftyCentsDoesNotHaveSameReferenceAsDollarAmountOneDollar() {
+		Assert.assertFalse(dollarAmountFiftyCents.equals(dollarAmountOneDollar));
+	}
+	
+	@Test
+	public void dollarAmountFiftyCentsHasSameReferenceAsDollarAmountFiftyCentsAgain() {
+		DollarAmount dollarAmountFiftyCentsAgain = dollarAmountFiftyCents;
+		Assert.assertTrue(dollarAmountFiftyCents.equals(dollarAmountFiftyCentsAgain));
+	}
+	
+	@Test
+	public void checkingReferenceOfDollarAmountAgainstNullDollarAmountObjectReturnsFalse() {
+		DollarAmount dollarAmountNull = null;
+		Assert.assertFalse(dollarAmountFiftyCents.equals(dollarAmountNull));
 	}
 	
 }
