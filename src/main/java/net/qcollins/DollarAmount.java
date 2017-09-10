@@ -2,6 +2,9 @@ package net.qcollins;
 
 public class DollarAmount {
 	public static final DollarAmount ZERO_DOLLARS = new DollarAmount(0);
+	public static final DollarAmount FIVE_CENTS = new DollarAmount(5);
+	public static final DollarAmount TEN_CENTS = new DollarAmount(10);
+	public static final DollarAmount TWENTY_FIVE_CENTS = new DollarAmount(25);
 	private int totalAmountInCents;
 
 	public DollarAmount(int totalAmountInCents) {
