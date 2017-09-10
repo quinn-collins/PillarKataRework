@@ -136,6 +136,12 @@ public class DollarAmountTest {
 	}
 	
 	@Test
+	public void checkingReferenceOfDollarAmountAgainstADifferentKindOfObjectReturnsFalse() {
+		Object randomObject = new Object();
+		Assert.assertFalse(dollarAmountFiftyCents.equals(randomObject));
+	}
+	
+	@Test
 	public void runningHashCodeMethodOnDollarAmountInstanceReturnsTotalCents() {
 		Assert.assertEquals(100, dollarAmountOneDollar.hashCode());
 	}
