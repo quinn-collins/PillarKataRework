@@ -26,7 +26,7 @@ public class CoinSlotTest {
 	}
 
 	@Test
-	public void canReturnCoins() {
+	public void canReturnCoinsWhenANickelADimeAndAQuarterHasBeenInserted() {
 		coinSlot.insertCoin(5, 21.21, 1.95);
 		coinSlot.insertCoin(2.268, 17.91, 1.35);
 		coinSlot.insertCoin(5.670, 24.26, 1.75);

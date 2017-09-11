@@ -217,6 +217,7 @@ public class VendingMachineTest {
 	@Test
 	public void whenMachineDoesNotHaveChangeForAnItemItWillDisplayExactChangeOnly() {
 		insertADollar();
+		vendingMachine.getCoinSlot().insertCoin(5, 21.21, 1.95);
 		vendingMachine.pressButton("CANDY");
 		Assert.assertEquals("EXACT CHANGE ONLY", vendingMachine.getDisplay().getMessage());
 	}
