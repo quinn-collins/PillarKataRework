@@ -9,10 +9,9 @@ import net.qcollins.currency.Dime;
 import net.qcollins.currency.Nickel;
 import net.qcollins.currency.Quarter;
 
-
 public class CoinBankTest {
 	private CoinBank coinBank;
-	
+
 	@Before
 	public void setup() {
 		coinBank = new CoinBank();
@@ -20,22 +19,22 @@ public class CoinBankTest {
 		coinBank.addCoin(new Dime());
 		coinBank.addCoin(new Nickel());
 	}
-	
+
 	@Test
 	public void canGetCoinStock() {
 		Assert.assertEquals(3, coinBank.getCoinStock().size());
 	}
-	
+
 	@Test
 	public void canGetNumberOfQuartersInCoinStock() {
 		Assert.assertEquals(1, coinBank.getNumberOfQuarters());
 	}
-	
+
 	@Test
 	public void canGetNumberOfDimesInCoinStock() {
 		Assert.assertEquals(1, coinBank.getNumberOfDimes());
 	}
-	
+
 	@Test
 	public void canGetNumberOfNickelInCoinStock() {
 		Assert.assertEquals(1, coinBank.getNumberOfNickels());

@@ -10,12 +10,11 @@ public class Display {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+
 	public void updateMessage(DollarAmount currentBalance) {
-		if(currentBalance.getCents() == 0) {
+		if (currentBalance.getCents() == 0) {
 			this.message = DisplayMessage.INSERT_COINS.getMessage();
-		}
-		else {
+		} else {
 			this.message = currentBalance.toString();
 		}
 	}

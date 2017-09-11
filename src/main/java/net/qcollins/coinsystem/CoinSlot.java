@@ -13,52 +13,65 @@ public class CoinSlot {
 	private DollarAmount currentBalance = DollarAmount.ZERO_DOLLARS;
 
 	public CoinSlot() {
-		coinIdentifier = new CoinIdentifier();;
+		coinIdentifier = new CoinIdentifier();
 		coinBank = new CoinBank();
 		coinTray = new CoinTray();
 	}
-	
+
 	public CoinBank getCoinBank() {
 		return coinBank;
 	}
-	
+
+	public CoinTray getCoinTray() {
+		return coinTray;
+	}
+
 	public DollarAmount getCurrentBalance() {
 		return currentBalance;
 	}
 
+	public void setCurrentBalance(DollarAmount amount) {
+		currentBalance = amount;
+	}
+
 	public void insertCoin(double mass, double diameter, double thickness) {
 		Currency coin = coinIdentifier.identify(mass, diameter, thickness);
-		coinBank.addCoin(coin);
+		if (coin.getName().equals("rejected")) {
+			coinTray.addCoinToCoinTray(coin);
+		} else {
+			coinBank.addCoin(coin);
+		}
 		currentBalance = currentBalance.plus(coin.getValue());
 	}
-	
+
 	public void returnCoins() {
-		while(currentBalance.isGreaterThanOrEqualTo(DollarAmount.FIVE_CENTS)) {
-			if(currentBalance.isGreaterThanOrEqualTo(DollarAmount.TWENTY_FIVE_CENTS) && coinBank.getNumberOfQuarters() > 0) {
+		while (currentBalance.isGreaterThanOrEqualTo(DollarAmount.FIVE_CENTS)) {
+			if (currentBalance.isGreaterThanOrEqualTo(DollarAmount.TWENTY_FIVE_CENTS)
+					&& coinBank.getNumberOfQuarters() > 0) {
 				currentBalance = currentBalance.minus(DollarAmount.TWENTY_FIVE_CENTS);
-				for(Currency coin : coinBank.getCoinStock()) {
-					if(coin.getValue().getCents() == 25) {
+				for (Currency coin : coinBank.getCoinStock()) {
+					if (coin.getValue().getCents() == 25) {
 						coinBank.getCoinStock().remove(coin);
 						break;
 					}
 				}
 				coinTray.addCoinToCoinTray(new Quarter());
-				
-			}
-			else if(currentBalance.isGreaterThanOrEqualTo(DollarAmount.TEN_CENTS) && coinBank.getNumberOfDimes() > 0) {
+
+			} else if (currentBalance.isGreaterThanOrEqualTo(DollarAmount.TEN_CENTS)
+					&& coinBank.getNumberOfDimes() > 0) {
 				currentBalance = currentBalance.minus(DollarAmount.TEN_CENTS);
-				for(Currency coin : coinBank.getCoinStock()) {
-					if(coin.getValue().getCents() == 10) {
+				for (Currency coin : coinBank.getCoinStock()) {
+					if (coin.getValue().getCents() == 10) {
 						coinBank.getCoinStock().remove(coin);
 						break;
 					}
 				}
 				coinTray.addCoinToCoinTray(new Dime());
-			}
-			else if(currentBalance.isGreaterThanOrEqualTo(DollarAmount.FIVE_CENTS) && coinBank.getNumberOfNickels() > 0) {
+			} else if (currentBalance.isGreaterThanOrEqualTo(DollarAmount.FIVE_CENTS)
+					&& coinBank.getNumberOfNickels() > 0) {
 				currentBalance = currentBalance.minus(DollarAmount.FIVE_CENTS);
-				for(Currency coin : coinBank.getCoinStock()) {
-					if(coin.getValue().getCents() == 5) {
+				for (Currency coin : coinBank.getCoinStock()) {
+					if (coin.getValue().getCents() == 5) {
 						coinBank.getCoinStock().remove(coin);
 						break;
 					}

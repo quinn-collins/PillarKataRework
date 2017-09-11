@@ -14,27 +14,27 @@ public class CoinBank {
 	public ArrayList<Currency> getCoinStock() {
 		return coinStock;
 	}
-	
+
 	public void addCoin(Currency coin) {
 		coinStock.add(coin);
 	}
-	
+
 	public int getNumberOfQuarters() {
 		return getNumberOfCoins("quarter");
 	}
-	
+
 	public int getNumberOfDimes() {
 		return getNumberOfCoins("dime");
 	}
-	
+
 	public int getNumberOfNickels() {
 		return getNumberOfCoins("nickel");
 	}
-	
+
 	public int getNumberOfCoins(String coinName) {
 		int numberOfCoins = 0;
-		for(Currency coin : coinStock) {
-			if(coin.getName().equals(coinName)) {
+		for (Currency coin : coinStock) {
+			if (coin.getName().equals(coinName)) {
 				numberOfCoins++;
 			}
 		}

@@ -10,7 +10,7 @@ public abstract class Currency {
 	public String getName() {
 		return name;
 	}
-	
+
 	public DollarAmount getValue() {
 		return value;
 	}
